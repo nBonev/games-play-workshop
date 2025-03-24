@@ -1,9 +1,14 @@
 import './App.css'
+import Header from './components/header/Header'
+import Home from './components/home/Home'
 
 function App() {
   return (
     <div id="box">
-        <h1>GamesPlay</h1>
+        <Header />
+        <main id="main-content">
+          <Home />
+        </main>
     </div>
   )
 }
