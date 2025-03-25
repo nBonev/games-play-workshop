@@ -14,5 +14,13 @@
         "imageUrl": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70070000011025/09fde58766118f7aec9f6ff30f3a8d6e7ba37ace336e79097643431c911d99c1",
         "summary": "In 2163, fourteen years after the events on Mars,[b] Earth has been overrun by demons, wiping out 60% of the planet's population. The Union Aerospace Corporation (UAC) has been fully corrupted into a demonic cult. What remains of humanity has either fled Earth or joined the Armored Response Coalition (ARC) resistance movement. The Doom Slayer, having previously been betrayed by Dr. Samuel Hayden, returns with a satellite fortress controlled by the AI VEGA to quell the demonic invasion by killing the Hell Priests: Deags Nilox, Ranak, and Grav. The priests serve an angelic being known as the Khan Maykr, who seeks to sacrifice mankind for her own race's survival. The Slayer teleports to Earth and kills Deag Nilox, but the Khan Maykr transports the two remaining priests to unknown locations.",
         "_id": "7feecb20-53ad-4844-be6d-3b88b49ccedc"
+    },
+    "ac31994d-cb94-463a-bcc8-a883749c5a6d": {
+        "title": "Mortal Kombat 11",
+        "category": "Battle",
+        "maxLevel": "50",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/7/7e/Mortal_Kombat_11_cover_art.png",
+        "summary": "Mortal Kombat 11 is a 2019 fighting game developed by NetherRealm Studios and published by Warner Bros. Interactive Entertainment. It is the eleventh main installment in the Mortal Kombat series and a sequel to Mortal Kombat X (2015). The game was announced at The Game Awards 2018 and was released in North America and Europe on April 23, 2019, for Nintendo Switch, PlayStation 4, Windows, and Xbox One—with the exception of Europe's Switch version which was released on May 10, 2019.[8] It was released on Stadia on November 19, 2019",
+        "_id": "ac31994d-cb94-463a-bcc8-a883749c5a6d"
     }
 }
