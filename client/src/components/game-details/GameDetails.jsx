@@ -53,7 +53,7 @@ export default function GameDetails({
                     <button onClick={gameDeleteClickHandler} className="button">Delete</button>
                 </div>
             </div>
-            <CommentsCreate email={email} />
+            <CommentsCreate email={email} gameId={gameId}/>
         </section>
     )
 }
