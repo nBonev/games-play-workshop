@@ -6,11 +6,6 @@ import { UserContext } from "../contexts/UserContext";
 const baseUrl = 'http://localhost:3030/data/games';
 
 export default {
-    async getAll() {
-        const result = await requester.get(baseUrl);
-        const games = Object.values(result);
-        return games;
-    },
     getOne(gameId) {
         return requester.get(`${baseUrl}/${gameId}`);
 
@@ -33,6 +28,19 @@ export const useGames = () => {
 
     return {
         games,
+    }
+}
+
+export const useGame = (gameId) => {
+    const [game, setGame] = useState({});
+
+    useEffect(() => {
+        requester.get(`${baseUrl}/${gameId}`)
+            .then(setGame)
+    }, [gameId]);
+
+    return {
+        game,
     }
 }
 
