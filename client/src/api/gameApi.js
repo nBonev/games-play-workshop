@@ -1,22 +1,10 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import requester from "../utils/requester";
-import { UserContext } from "../contexts/UserContext";
+import useAuth from "../hooks/useAuth";
 
 
 const baseUrl = 'http://localhost:3030/data/games';
 
-export default {
-    getOne(gameId) {
-        return requester.get(`${baseUrl}/${gameId}`);
-
-    },
-    edit(gameId, gameData) {
-        return requester.put(`${baseUrl}/${gameId}`, {...gameData, _id: gameId});
-    },
-    delete(gameId) {
-        return requester.delete(`${baseUrl}/${gameId}`);
-    }
-}
 
 export const useGames = () => {
     const [games, setGames] = useState([]);
@@ -45,18 +33,37 @@ export const useGame = (gameId) => {
 }
 
 export const useCreateGame = () => {
-    const { accessToken } = useContext(UserContext);
-    const options = {
-        headers: {
-            'X-Authorization': accessToken,
-        }
-    }
+    const { request } = useAuth();
 
     const create = (gameData) => {
-        return requester.post(baseUrl, gameData, options);
+        request.post(baseUrl, gameData);
     }
 
     return {
         create,
+    }
+}
+
+export const useEditGame = () => {
+    const { request } = useAuth();
+
+    const edit = (gameId, gameData) => {
+        request.put(`${baseUrl}/${gameId}`, {...gameData, _id: gameId});
+    }
+
+    return {
+        edit,
+    }
+}
+
+export const useDeleteGame = () => {
+    const { request } = useAuth();
+
+    const deleteGame = (gameId) => {
+        request.delete(`${baseUrl}/${gameId}`);
+    }
+
+    return {
+        deleteGame,
     }
 }
