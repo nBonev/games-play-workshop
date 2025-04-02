@@ -13,7 +13,7 @@ export default function useAuth() {
                 ...options.headers,
             }
         }
-        return requester.baseRequest(method, url, data, optionWrapper)
+        return requester.baseRequest(method, url, data, authData.accessToken ? optionWrapper : options);
     }
 
     return {
