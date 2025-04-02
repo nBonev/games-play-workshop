@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import requester from "../utils/requester";
 import { UserContext } from "../contexts/UserContext";
 
@@ -23,6 +23,19 @@ export default {
     }
 }
 
+export const useGames = () => {
+    const [games, setGames] = useState([]);
+
+    useEffect(() => {
+        requester.get(baseUrl)
+            .then(setGames)
+    }, []);
+
+    return {
+        games,
+    }
+}
+
 export const useCreateGame = () => {
     const { accessToken } = useContext(UserContext);
     const options = {
@@ -30,7 +43,7 @@ export const useCreateGame = () => {
             'X-Authorization': accessToken,
         }
     }
-    
+
     const create = (gameData) => {
         return requester.post(baseUrl, gameData, options);
     }
